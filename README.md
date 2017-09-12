@@ -1,2 +1,4 @@
 # whiski.github.io
-GA-JS 
+GA-JS
+
+This is how we get started!
