@@ -124,6 +124,7 @@ button {
   font-size: 28px;
 }
 
+/* removing the outline around selected buttons*/
 button:focus { outline:0 !important; }
 
 button:active {
@@ -134,6 +135,7 @@ button:hover {
   background-color: #4A90E2;
   color: white;
 }
+
 /*******************************************/
 /* Bubbles
 /*******************************************/
