@@ -194,7 +194,7 @@ body {
     -webkit-transform: scale(0.8);
     -moz-transform: scale(0.8);
     transform: scale(0.8);
-    opacity: 0.3; 
+    opacity: 0.3;
     -webkit-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
     -moz-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
     -o-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
@@ -204,7 +204,7 @@ body {
     -webkit-transform: scale(0.8);
     -moz-transform: scale(0.8);
     transform: scale(0.8);
-    opacity: 0.55; 
+    opacity: 0.55;
     -webkit-animation: moveclouds 12s linear infinite, sideWays 1s ease-in-out infinite alternate;
     -moz-animation: moveclouds 12s linear infinite, sideWays 1s ease-in-out infinite alternate;
     -o-animation: moveclouds 12s linear infinite, sideWays 1s ease-in-out infinite alternate;
