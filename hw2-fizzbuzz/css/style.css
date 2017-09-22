@@ -88,7 +88,7 @@ body {
 
 .underCenter {
   position: absolute;
-  top: 57%;
+  top: 62%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
