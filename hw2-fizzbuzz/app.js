@@ -35,6 +35,7 @@ var fizzbuzz = function(){
 		}
 		if (i === 1){
 			//ending the loop
+			$( "#addMessage" ).empty();
 			$( "#fizzbuzz" ).empty().append("fizzbuzz!");
 			clearInterval(loopCount)
 		}
