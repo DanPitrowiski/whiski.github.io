@@ -1,4 +1,5 @@
 var screenHeight = $( document ).height();
+var musicCheck = "ON";
 
 var fizzbuzz = function(){
 	var i = 100;
@@ -72,6 +73,18 @@ var music = $('#music')[0];
 function playMusic() { music.play(); music.volume = .4;}
 function pauseMusic() { music.pause();}
 playMusic();
+
+$('.pauseMusic').click( function(){
+  if (musicCheck === "ON"){
+  	pauseMusic();
+  	musicCheck = "OFF";
+  	$( ".pauseMusic" ).empty().append("Play Music");
+  }else{
+  	playMusic();
+  	musicCheck = "ON";
+  	$( ".pauseMusic" ).empty().append("Pause Music");
+  }
+});
 
 // Relying on your newfound knowledge of loops, combine loops and if/else statements together and incrementally build the common fizzbuzz loop.
 
