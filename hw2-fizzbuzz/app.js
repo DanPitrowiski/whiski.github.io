@@ -2,7 +2,7 @@ var screenHeight = $( "body" ).height();
 
 var fizzbuzz = function(){
 	var i = 100;
-	var loopCount = setInterval(loop, 600);
+	var loopCount = setInterval(loop, 500);
 
 	function loop(){
 		$("#fizzbuzz").removeClass( "fizz buzz fizzbuzz" );
@@ -10,7 +10,7 @@ var fizzbuzz = function(){
 			console.log("fizzbuzz");
 			$("#fizzbuzz").addClass( "fizzbuzz" );
 			$( "#fizzbuzz" ).empty().append("fizzbuzz");
-			$( "#addMessage" ).empty().append("+bee dad +fizzy bubble");
+			$( "#addMessage" ).empty().append("divisible by 5 and 3</br>+bee dad +fizzy bubble");
 			createBee(i);
 			createFizz(i);
 		}
@@ -18,14 +18,14 @@ var fizzbuzz = function(){
 			console.log("buzz");
 			$("#fizzbuzz").addClass( "buzz" );
 			$( "#fizzbuzz" ).empty().append("buzz");
-			$( "#addMessage" ).empty().append("+bee dad");
+			$( "#addMessage" ).empty().append("divisible by 5</br>+bee dad");
 			createBee(i);
 		}
 		else if(i%3 === 0){
 			console.log("fizz");
 			$("#fizzbuzz").addClass( "fizz" );
 			$( "#fizzbuzz" ).empty().append("fizz");
-			$( "#addMessage" ).empty().append("+fizzy bubble");
+			$( "#addMessage" ).empty().append("divisible by 3</br>+fizzy bubble");
 			createFizz(i);
 		}
 		else {
@@ -60,9 +60,6 @@ function createFizz(num){
 	$( ".x"+num ).css('-moz-animation','moveclouds '+((random()*12)+2)+'s linear infinite, sideWays '+((random()*4)+1)+'s ease-in-out infinite alternate');
 	$( ".x"+num ).css('-o-animation','moveclouds '+((random()*12)+2)+'s linear infinite, sideWays '+((random()*4)+1)+'s ease-in-out infinite alternate');
 }
-
-
-
 
 function random(){
 	return randomNum = Math.random();

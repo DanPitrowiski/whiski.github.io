@@ -82,6 +82,17 @@ body {
   left: 43%;
 }
 
+.centerM {
+  top: 55%;
+  left: 47%;
+  text-align: center;
+}
+
+.addMessage {
+  top: 30%;
+  display: block;
+}
+
 p {
   font-size: 18px;
   color: #fff;
