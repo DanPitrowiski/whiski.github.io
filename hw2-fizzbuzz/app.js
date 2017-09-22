@@ -46,7 +46,7 @@ var fizzbuzz = function(){
 fizzbuzz();
 
 function createBee(num){
-	let direction;
+	let direction ="";
 	if (random() >= .5 ){ direction = "flipped"};
 	let heightPercent = ((Math.random() * screenHeight));
 	$( "#background" ).append("<marquee behavior='scroll' direction='right' scrollamount='"+((random()*20)+7)+"' class='bee bee"+num+' '+direction+"'><img src='img/bee.png'></marquee>");
@@ -68,7 +68,8 @@ function random(){
 };
 
 var music = $('#music')[0];
-function playMusic() { music.play(); music.volume = .6;}
+function playMusic() { music.play(); music.volume = .4;}
+function pauseMusic() { music.pause();}
 playMusic();
 
 // Relying on your newfound knowledge of loops, combine loops and if/else statements together and incrementally build the common fizzbuzz loop.
