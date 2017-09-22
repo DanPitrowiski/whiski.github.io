@@ -38,12 +38,10 @@
 /*******************************************/
 
 body {
-     color: #000;
-     font-size: 12px;
-     line-height: 1.4;
-     font-family: 'Lato', sans-serif;
-     padding: 20px 0 0 20px;
-     background: #A3CDFF;
+  color: #000;
+  font-size: 12px;
+  line-height: 1.4;
+  font-family: 'Lato', sans-serif;
 }
 
 
@@ -53,8 +51,15 @@ body {
 
 /* Center the container */
 #container {
-	width: 960px;
 	margin: auto;
+  background: #A3CDFF;
+  height: 1500px;
+  width: auto;
+  background-size: 100%;
+  background: -webkit-linear-gradient(#CAE1FF , #A3CDFF); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#CAE1FF , #A3CDFF); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#CAE1FF , #A3CDFF); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#CAE1FF , #A3CDFF); /* Standard syntax */
 }
 
 #content span {
@@ -135,6 +140,20 @@ button:hover {
   background-color: #4A90E2;
   color: white;
 }
+
+.flipped {
+    transform: scale(-1, 1);
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+}
+
+.bee {
+  clear: both;
+  position: absolute;
+}
+
 
 /******************************************
 /* The BUZZ IN FIZZBUZZ

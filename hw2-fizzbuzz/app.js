@@ -1,8 +1,8 @@
-var screenHeight = $( "body" ).height();
+var screenHeight = $( document ).height();
 
 var fizzbuzz = function(){
 	var i = 100;
-	var loopCount = setInterval(loop, 600);
+	var loopCount = setInterval(loop, 400);
 
 	function loop(){
 		$("#fizzbuzz").removeClass( "fizz buzz fizzbuzz" );
@@ -46,9 +46,11 @@ var fizzbuzz = function(){
 fizzbuzz();
 
 function createBee(num){
-	let heightPercent = Math.floor(Math.random() * screenHeight);
-	$( "#background" ).append("<marquee behavior='scroll' direction='right' scrollamount='"+((random()*20)+7)+"' class='bee"+num+"'><img src='img/bee.png'></marquee>");
-	$( ".bee"+num ).css('height',heightPercent+"%");
+	let direction;
+	if (random() >= .5 ){ direction = "flipped"};
+	let heightPercent = ((Math.random() * screenHeight));
+	$( "#background" ).append("<marquee behavior='scroll' direction='right' scrollamount='"+((random()*20)+7)+"' class='bee bee"+num+' '+direction+"'><img src='img/bee.png'></marquee>");
+	$( ".bee"+num ).css('top',heightPercent);
 };
 
 function createFizz(num){
@@ -56,14 +58,18 @@ function createFizz(num){
 	$( ".x"+num ).css('left',random()*100+'%');
 	$( ".x"+num ).css('transform','scale '+random());
 	$( ".x"+num ).css('opacity',random()*.6);
-	$( ".x"+num ).css('-webkit-animation','moveclouds '+((random()*12)+2)+'s linear infinite, sideWays '+((random()*4)+1)+'s ease-in-out infinite alternate');
-	$( ".x"+num ).css('-moz-animation','moveclouds '+((random()*12)+2)+'s linear infinite, sideWays '+((random()*4)+1)+'s ease-in-out infinite alternate');
-	$( ".x"+num ).css('-o-animation','moveclouds '+((random()*12)+2)+'s linear infinite, sideWays '+((random()*4)+1)+'s ease-in-out infinite alternate');
+	$( ".x"+num ).css('-webkit-animation','moveclouds '+((random()*8)+5)+'s linear infinite, sideWays '+((random()*4)+1)+'s ease-in-out infinite alternate');
+	$( ".x"+num ).css('-moz-animation','moveclouds '+((random()*8)+5)+'s linear infinite, sideWays '+((random()*4)+1)+'s ease-in-out infinite alternate');
+	$( ".x"+num ).css('-o-animation','moveclouds '+((random()*8)+5)+'s linear infinite, sideWays '+((random()*4)+1)+'s ease-in-out infinite alternate');
 }
 
 function random(){
 	return randomNum = Math.random();
 };
+
+var music = $('#music')[0];
+function playMusic() { music.play(); music.volume = .6;}
+playMusic();
 
 // Relying on your newfound knowledge of loops, combine loops and if/else statements together and incrementally build the common fizzbuzz loop.
 
