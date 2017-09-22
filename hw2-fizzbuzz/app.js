@@ -2,7 +2,7 @@ var screenHeight = $( "body" ).height();
 
 var fizzbuzz = function(){
 	var i = 100;
-	var loopCount = setInterval(loop, 500);
+	var loopCount = setInterval(loop, 600);
 
 	function loop(){
 		$("#fizzbuzz").removeClass( "fizz buzz fizzbuzz" );
@@ -30,7 +30,7 @@ var fizzbuzz = function(){
 		}
 		else {
 			console.log(i);
-			$( "#addMessage" ).empty();
+			// $( "#addMessage" ).empty();
 			$( "#fizzbuzz" ).empty().append(i);
 		}
 		if (i === 1){

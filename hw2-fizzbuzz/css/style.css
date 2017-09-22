@@ -84,7 +84,6 @@ body {
 
 .centerM {
   top: 55%;
-  left: 47%;
   text-align: center;
 }
 
@@ -97,6 +96,7 @@ p {
   font-size: 18px;
   color: #fff;
   opacity: .5;
+  display: none;
 }
 
 h2 {
