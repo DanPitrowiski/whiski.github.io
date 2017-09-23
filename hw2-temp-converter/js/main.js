@@ -40,6 +40,9 @@ $('#celsius_to_fahrenheit').click( function(){
 var backgroundColor = function(){
    $( 'canvas' ).css('display','none');
    $( '.sun' ).css('display','none');
+   $( '.cactus').removeClass('move-in');
+   $( '.cactus').addClass('roll-out');
+   $( '.cactus').addClass('hide');
 
    if (celsius <= 0 || farenheit <= 32){
       $( 'body' ).css('background','#4A90E2');
@@ -51,6 +54,9 @@ var backgroundColor = function(){
       $( 'body' ).css('color','#FFF');
       $( '.sun' ).css('display','block');
       $( '.sun' ).css('opacity','1');
+      $( '.cactus').addClass('move-in');
+      $( '.cactus').css('display','inherit');
+      $( '.cactus').removeClass('hide');
    }
    else if (celsius >= 16 || farenheit >= 60){
       $( 'body' ).css('background','#FF8C2A');
