@@ -11,6 +11,7 @@ body {
   transition: background 0.5s linear;
   font-size: 18px;
   background: #A3CDFF;
+  overflow: hidden;
   
   /*no need to restrict the body size, 
   let it grow to adjust its content to browser size*/
