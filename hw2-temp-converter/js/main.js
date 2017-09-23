@@ -46,7 +46,7 @@ var backgroundColor = function(){
       $( 'canvas' ).css('display','inherit');
       $( 'body' ).css('color','#FFF');
    }
-   else if (celsius >= 32 || farenheit >= 90){
+   else if (celsius >= 38 || farenheit >= 100){
       $( 'body' ).css('background','#D04C02');
       $( 'body' ).css('color','#FFF');
       $( '.sun' ).css('display','block');
