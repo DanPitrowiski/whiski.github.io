@@ -129,7 +129,7 @@ canvas {
   border-radius: 100%;
   left: -150px;
   top: -150px;
-  z-index:5;
+  z-index: -100;
 
   /*in this situation, it's better to have it absolute, 
   to make sure that other elements will not interfere with its
@@ -141,7 +141,7 @@ canvas {
 /*Clouds*/
 .clouds {
   /*fixing your clouds container, will prevent the x-axis to be so long*/
-  
+
   /*making it position absolute, and using top and left 
   will place it on the upper corner of the screen, this way
   every element inside of it, will be relative to it.*/
@@ -168,6 +168,7 @@ canvas {
   max-width: 100%;
   /*this z-index can still be 100 because it's inside a parent that is -1 AND is absolute*/
   z-index: 100;
+  transition: opacity 0.5s linear;
 }
 
 
@@ -206,6 +207,24 @@ canvas {
   right: 50px;
   bottom: -50px;
   display: none;
+}
+
+.beach-chair {
+  position: absolute;
+  left: 50px;
+  bottom: 20px;
+  display: none;
+}
+
+.beach {
+  display: none;
+  background: #FEE7C7;
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  bottom: 0px;
+  height: 120px;
+  border: 3px solid #FFD69C;
 }
 
 .roll-out {
