@@ -52,7 +52,7 @@ var backgroundColor = function(){
       $( '.sun' ).css('display','block');
       $( '.sun' ).css('opacity','1');
    }
-   else if (celsius >= 21 || farenheit >= 70){
+   else if (celsius >= 16 || farenheit >= 60){
       $( 'body' ).css('background','#FF8C2A');
       $( 'body' ).css('color','#FFF');
       $( '.sun' ).css('display','block');
