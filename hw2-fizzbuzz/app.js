@@ -3,7 +3,7 @@ var musicCheck = "ON";
 
 var fizzbuzz = function(){
 	var i = 100;
-	var loopCount = setInterval(loop, 400);
+	var loopCount = setInterval(loop, 800);
 
 	function loop(){
 		$("#fizzbuzz").removeClass( "fizz buzz fizzbuzz" );

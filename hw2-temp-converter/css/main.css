@@ -1,22 +1,40 @@
 body {
   padding: 20px;
   text-align: center;
+  transition: background 0.5s linear;
+  font-size: 18px;
+  background: #A3CDFF;
+  width: 400px;
+  height: 100%;
+  max-width: 100%;
 }
 
 h1 {
-  font-family: Georgia, serif;
+  font-family: lato, sans-serif;
+  font-size: 32px;
 }
 
+p {
+  font-family: lato, sans-serif;
+  font-size: 30px;
+}
+
+
 .converter-container {
-  width: 340px;
+  width: 420px;
   margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 input {
   margin-right: 10px;
-  padding: 10px;
+  padding: 10px 20px;
   border: 3px solid #dfdfdf;
   border-radius: 4px;
+  font-size: 18px;
 }
 
 input:focus {
@@ -25,8 +43,8 @@ input:focus {
 }
 
 button {
-  font-size: 14px;
-  padding: 10px;
+  font-size: 18px;
+  padding: 12px 10px;
   color: white;
   border: none;
   border-radius: 4px;
@@ -52,3 +70,63 @@ button {
   background-color: rgba(255, 0, 0, .6);
   padding: 10px;
 }
+
+/* Snow */
+
+canvas {
+  display: none;
+}
+
+/*Sun*/
+
+.sun {
+  opacity: .5;
+  width: 300px;
+  height: 300px;
+  z-index: 0;
+  background: #ff0;
+  background: -moz-radial-gradient(center, ellipse cover, #f90 0%, #fc0 50%, #ff0 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#f90), color-stop(50%,#fc0), color-stop(100%,#ff0));
+  background: -webkit-radial-gradient(center, ellipse cover, #f90 0%,#fc0 50%,#ff0 100%);
+  background: -o-radial-gradient(center, ellipse cover, #f90 0%,#fc0 50%,#ff0 100%);
+  background: -ms-radial-gradient(center, ellipse cover, #f90 0%,#fc0 50%,#ff0 100%);
+  background: radial-gradient(ellipse at center, #f90 0%,#fc0 50%,#ff0 100%);
+  border-radius: 100%;
+  left: -150px;
+  top: -150px;
+  z-index:5;
+  position:relative;
+  box-shadow: 0 0 100px #ff0, 0 0 100px #ff0;
+}
+
+/*Clouds*/
+
+.cloud {
+  position: absolute;
+  left: 0px;
+  max-width: 100%;
+  z-index: 100;
+}
+
+.clouds {
+  width: 1000px;
+  height: 300px;
+}
+
+.cloud1 {
+  transform: scale(1.5);
+  top: 2%;
+}
+.cloud2 {
+  transform: scale(1.8);
+  top: 5%;
+}
+.cloud3 {
+  transform: scale(1.2);
+  top: 7%;
+}
+.cloud4 {
+  transform: scale(1.4);
+  top: 6%;
+}
+
