@@ -23,7 +23,7 @@ var farenheit = 0;
 $('#fahrenheit_to_celsius').click( function(){
    farenheit = $( '#temperature' ).val();
    celsius = Math.round((farenheit - 32) / 1.8);
-   $('#result').empty().append("Celsius is "+celsius);
+   $('#result').empty().append(farenheit + " farenheit is "+celsius+" celsius");
    $( '#temperature' ).val("");
    backgroundColor();
 });
@@ -31,7 +31,7 @@ $('#fahrenheit_to_celsius').click( function(){
 $('#celsius_to_fahrenheit').click( function(){
    celsius = $( '#temperature' ).val();
    farenheit = Math.round((1.8 * celsius) + 32);
-   $('#result').empty().append("Farenheit is "+farenheit);
+   $('#result').empty().append(celsius + " celsius is "+farenheit+" farenheit");
    $( '#temperature' ).val("");
    backgroundColor();
 });
