@@ -1,12 +1,29 @@
+html {
+  height: 100%;
+  width: 100%;
+}
 body {
-  padding: 20px;
+  /*since you're centralizing your content, 
+  the padding on body is kinda useless*/
+  /*padding: 20px;*/
+
   text-align: center;
   transition: background 0.5s linear;
   font-size: 18px;
   background: #A3CDFF;
-  width: 400px;
+  
+  /*no need to restrict the body size, 
+  let it grow to adjust its content to browser size*/
+  /*width: 400px;*/
   height: 100%;
-  max-width: 100%;
+  
+  /*if you have a defined width in pixels, the max-width will never be used*/
+  /*max-width: 100%;*/
+  
+  /* additions */
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -19,16 +36,33 @@ p {
   font-size: 30px;
 }
 
-
 .converter-container {
   width: 420px;
-  margin: 0 auto;
-  position: absolute;
+  
+  /*if you're using position absolute
+  with top and left, then the margin is
+  useless*/
+  /*margin: 0 auto;*/
+  
+  /*relative will make it relative to the parent (body in this case)*/
+  position: relative;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -75%);
+  
+  /*padding-top: 50vh; /*vh is a unit that represents the 1/100 of viewport height*/
 }
 
+/*
+when declaring styles for your inputs and buttons,
+try to avoid doing that on the tags. if you need to
+expand your project later and add more forms,
+they may need to overwrite a lot of css to look
+different.
+A better alternative is to use class.
+I know that this project is quite small, and maybe
+you already know this, but never hurts to point it out =]
+*/
 input {
   margin-right: 10px;
   padding: 10px 20px;
@@ -83,6 +117,7 @@ canvas {
   opacity: .5;
   width: 300px;
   height: 300px;
+  /*this is repeated bellow, in this situation the last rule will overwrite this one*/
   z-index: 0;
   background: #ff0;
   background: -moz-radial-gradient(center, ellipse cover, #f90 0%, #fc0 50%, #ff0 100%);
@@ -95,23 +130,47 @@ canvas {
   left: -150px;
   top: -150px;
   z-index:5;
-  position:relative;
+
+  /*in this situation, it's better to have it absolute, 
+  to make sure that other elements will not interfere with its
+  placement, as it can happen with relative positioning*/
+  position: absolute;
   box-shadow: 0 0 100px #ff0, 0 0 100px #ff0;
 }
 
 /*Clouds*/
+.clouds {
+  /*fixing your clouds container, will prevent the x-axis to be so long*/
+  
+  /*making it position absolute, and using top and left 
+  will place it on the upper corner of the screen, this way
+  every element inside of it, will be relative to it.*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*because of the position absolute, it will be placed on top
+  of the others elements in your page, so setting it to z-index:-1  
+  will make it be lower than all elements (except body)
+  (this is a trick, though)*/
+  z-index: -1;
+
+  width: 100%;
+  height: 500px;
+
+  /*this is the trick that will prevent your x-axis from stretching by the size of your marqueesß*/
+  overflow-x: hidden;
+}
 
 .cloud {
   position: absolute;
-  left: 0px;
+  left: 0;
+  top: 0;
   max-width: 100%;
+  /*this z-index can still be 100 because it's inside a parent that is -1 AND is absolute*/
   z-index: 100;
 }
 
-.clouds {
-  width: 1000px;
-  height: 300px;
-}
+
 
 .cloud1 {
   transform: scale(1.5);
@@ -123,10 +182,21 @@ canvas {
 }
 .cloud3 {
   transform: scale(1.2);
-  top: 7%;
+  top: 15%;
 }
 .cloud4 {
   transform: scale(1.4);
   top: 6%;
+}
+
+/*fixing the canvas-wrap in the same way the clouds was fixed*/
+.canvas-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
