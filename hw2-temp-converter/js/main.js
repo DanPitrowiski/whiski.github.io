@@ -49,6 +49,7 @@ var backgroundColor = function(){
    $( '.beach').css('display','none');
    $( '.cloud').css('opacity','1');
    $( '.cloud1').css('opacity','1');
+   $( '.cloud2').css('opacity','1');
    $( '.cloud3').css('opacity','1');
    $( '.cloud4').css('opacity','1');
 
@@ -67,7 +68,7 @@ var backgroundColor = function(){
       $( '.cactus').removeClass('hide');
       $( '.cloud').css('opacity','0');
    }
-   else if (celsius >= 16 || farenheit >= 60){
+   else if (celsius >= 18 || farenheit >= 65){
       $( 'body' ).css('background','#FF8C2A');
       $( 'body' ).css('color','#FFF');
       $( '.sun' ).css('display','block');
@@ -86,6 +87,7 @@ var backgroundColor = function(){
       $( 'body' ).css('color','#000');
       $( '.sun' ).css('display','block');
       $( '.sun' ).css('opacity','.3');
+      $( '.cloud2').css('opacity','0');
    }
 }
 

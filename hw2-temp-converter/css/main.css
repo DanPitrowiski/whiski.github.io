@@ -175,20 +175,21 @@ canvas {
 
 
 .cloud1 {
-  transform: scale(1.5);
-  top: 2%;
+  transform: scale(1.4);
+  top: 4%;
 }
 .cloud2 {
   transform: scale(1.8);
-  top: 5%;
+  top: 7%;
 }
 .cloud3 {
-  transform: scale(1.2);
+  transform: scale(1.35);
   top: 15%;
+  opacity: 0;
 }
 .cloud4 {
-  transform: scale(1.4);
-  top: 6%;
+  transform: scale(1.2);
+  top: 10%;
 }
 
 /*fixing the canvas-wrap in the same way the clouds was fixed*/
