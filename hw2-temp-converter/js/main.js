@@ -21,23 +21,71 @@ var farenheit = 0;
 
 
 $('#fahrenheit_to_celsius').click( function(){
-   farenheit = $( '#temperature' ).val();
-   celsius = Math.round((farenheit - 32) / 1.8);
-   $('#result').empty().append(farenheit + " farenheit is "+celsius+" celsius");
-   $( '#temperature' ).val("");
-   backgroundColor();
+   if ($.isNumeric( $( '#temperature' ).val())){
+      farenheit = $( '#temperature' ).val();
+      celsius = Math.round((farenheit - 32) / 1.8);
+      $('#result').empty().append(farenheit + " farenheit is "+celsius+" celsius");
+      $( '#temperature' ).val("");
+      backgroundColor();
+   } else (printError());
 });
 
 $('#celsius_to_fahrenheit').click( function(){
-   celsius = $( '#temperature' ).val();
-   farenheit = Math.round((1.8 * celsius) + 32);
-   $('#result').empty().append(celsius + " celsius is "+farenheit+" farenheit");
-   $( '#temperature' ).val("");
-   backgroundColor();
+   if ($.isNumeric( $( '#temperature' ).val())){
+      celsius = $( '#temperature' ).val();
+      farenheit = Math.round((1.8 * celsius) + 32);
+      $('#result').empty().append(celsius + " celsius is "+farenheit+" farenheit");
+      $( '#temperature' ).val("");
+      backgroundColor();
+   } else (printError());
 });
 
 
 var backgroundColor = function(){
+
+   resetUI();
+
+   if (celsius <= 0 || farenheit <= 32){
+      $( 'body' ).css('background','#4A90E2');
+      $( 'canvas' ).css('display','inherit');
+      // $( 'body' ).css('color','#FFF');
+   }
+   else if (celsius >= 38 || farenheit >= 100){
+      $( 'body' ).css('background','#D04C02');
+      // $( 'body' ).css('color','#FFF');
+      $( '.sun' ).css('display','block');
+      $( '.sun' ).css('opacity','1');
+      $( '.cactus').addClass('move-in');
+      $( '.cactus').css('display','inherit');
+      $( '.cactus').removeClass('hide');
+      $( '.cloud').css('opacity','0');
+   }
+   else if (celsius >= 18 || farenheit >= 65){
+      $( 'body' ).css('background','#FF8C2A');
+      // $( 'body' ).css('color','#FFF');
+      $( '.sun' ).css('display','block');
+      $( '.sun' ).css('opacity','.7');
+      $( '.beach-chair' ).addClass('move-in');
+      $( '.beach-chair' ).css('display','inherit');
+      $( '.beach-chair' ).removeClass('hide');
+      $( '.beach' ).addClass('move-in');
+      $( '.beach').css('display','inherit');
+      $( '.cloud1').css('opacity','0');
+      $( '.cloud2').css('opacity','0');
+      $( '.cloud4').css('opacity','0');
+   }
+   else if (celsius > 0 || farenheit > 32){
+      $( 'body' ).css('background','#A3CDFF');
+      // $( 'body' ).css('color','#000');
+      $( '.sun' ).css('display','block');
+      $( '.sun' ).css('opacity','.3');
+      $( '.cloud2').css('opacity','0');
+   }
+}
+
+
+
+var resetUI = function(){
    $( 'canvas' ).css('display','none');
    $( '.sun' ).css('display','none');
    $( '.cactus').removeClass('move-in');
@@ -52,45 +100,13 @@ var backgroundColor = function(){
    $( '.cloud2').css('opacity','1');
    $( '.cloud3').css('opacity','1');
    $( '.cloud4').css('opacity','1');
-
-   if (celsius <= 0 || farenheit <= 32){
-      $( 'body' ).css('background','#4A90E2');
-      $( 'canvas' ).css('display','inherit');
-      $( 'body' ).css('color','#FFF');
-   }
-   else if (celsius >= 38 || farenheit >= 100){
-      $( 'body' ).css('background','#D04C02');
-      $( 'body' ).css('color','#FFF');
-      $( '.sun' ).css('display','block');
-      $( '.sun' ).css('opacity','1');
-      $( '.cactus').addClass('move-in');
-      $( '.cactus').css('display','inherit');
-      $( '.cactus').removeClass('hide');
-      $( '.cloud').css('opacity','0');
-   }
-   else if (celsius >= 18 || farenheit >= 65){
-      $( 'body' ).css('background','#FF8C2A');
-      $( 'body' ).css('color','#FFF');
-      $( '.sun' ).css('display','block');
-      $( '.sun' ).css('opacity','.7');
-      $( '.beach-chair' ).addClass('move-in');
-      $( '.beach-chair' ).css('display','inherit');
-      $( '.beach-chair' ).removeClass('hide');
-      $( '.beach' ).addClass('move-in');
-      $( '.beach').css('display','inherit');
-      $( '.cloud1').css('opacity','0');
-      $( '.cloud2').css('opacity','0');
-      $( '.cloud4').css('opacity','0');
-   }
-   else if (celsius > 0 || farenheit > 32){
-      $( 'body' ).css('background','#A3CDFF');
-      $( 'body' ).css('color','#000');
-      $( '.sun' ).css('display','block');
-      $( '.sun' ).css('opacity','.3');
-      $( '.cloud2').css('opacity','0');
-   }
+   $( '#temperature').removeClass('error');
 }
 
+var printError = function(){
+   $('#result').empty().append("Try again");
+   $( '#temperature').addClass('error');
+}
 
 // Snow
 // -------------------

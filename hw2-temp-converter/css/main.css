@@ -12,6 +12,8 @@ body {
   font-size: 18px;
   background: #A3CDFF;
   overflow: hidden;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
   
   /*no need to restrict the body size, 
   let it grow to adjust its content to browser size*/
@@ -28,13 +30,13 @@ body {
 }
 
 h1 {
-  font-family: lato, sans-serif;
   font-size: 32px;
 }
 
 p {
-  font-family: lato, sans-serif;
   font-size: 30px;
+  font-style: italic;
+  font-weight: 100;
 }
 
 .converter-container {
@@ -94,16 +96,6 @@ button {
 /* This class shoud be added to the input if the user has not entered a value */
 .error {
   border-color: red;
-}
-
-/* This error message should fade in if the user has not entered a value */
-.error-message {
-  color: white;
-  border: 3px solid red;
-  border-radius: 4px;
-  display: none; /*Hidden by default*/
-  background-color: rgba(255, 0, 0, .6);
-  padding: 10px;
 }
 
 /* Snow */
