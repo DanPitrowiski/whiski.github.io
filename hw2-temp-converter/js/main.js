@@ -1,21 +1,4 @@
-/*
-1. Create a function that accepts a temperature value in Fahrenheit and converts it to Celsius.
-   Note: Equation to convert F to C:
-   C = (F - 32) / 1.8
-   Test your function.
-2. Create a second function that accepts a temperature value in Celsius and converts it to Fahrenheit.
-   Note: Equation to convert C to F:
-   F = 1.8 * C + 32
-   Test your function.
-BONUS 1: Update your functions to use the value entered in the text box on the web page, and to perform calculations only when the appropriate button is clicked:
-	1.  Set the value of the temp variable to the value of the element with the id value 'temperature'.
-	    (Hint: read about the document.querySelector() method.)
-	2.  Set the appropriate function to run when each button is clicked.
-		(Hint: read about the addEventListener() method.)
-BONUS 2: Display the result of each calculation in the browser window rather than in the console:
-	1.  At the end of each function, set the text of the element with the id value 'result' to the same text string you were previously logging to the console.
-BONUS 3: Clear the contents of the text box after you've displayed your results, so a user can easily enter another temperature to convert. (Hint: Read about the 'value' property in JavaScript. What string value could you assign as the value of an input box that would give it no content to display?)
-*/
+
 var celsius = 0;
 var farenheit = 0;
 
@@ -26,7 +9,7 @@ $('#fahrenheit_to_celsius').click( function(){
       celsius = Math.round((farenheit - 32) / 1.8);
       $('#result').empty().append(farenheit + " farenheit is "+celsius+" celsius");
       $( '#temperature' ).val("");
-      backgroundColor();
+      backgroundChange();
    } else (printError());
 });
 
@@ -36,23 +19,22 @@ $('#celsius_to_fahrenheit').click( function(){
       farenheit = Math.round((1.8 * celsius) + 32);
       $('#result').empty().append(celsius + " celsius is "+farenheit+" farenheit");
       $( '#temperature' ).val("");
-      backgroundColor();
+      backgroundChange();
    } else (printError());
 });
 
 
-var backgroundColor = function(){
+var backgroundChange = function(){
 
    resetUI();
 
    if (celsius <= 0 || farenheit <= 32){
       $( 'body' ).css('background','#4A90E2');
       $( 'canvas' ).css('display','inherit');
-      // $( 'body' ).css('color','#FFF');
+      $( '.sun' ).css('opacity','0');
    }
    else if (celsius >= 38 || farenheit >= 100){
       $( 'body' ).css('background','#D04C02');
-      // $( 'body' ).css('color','#FFF');
       $( '.sun' ).css('display','block');
       $( '.sun' ).css('opacity','1');
       $( '.cactus').addClass('move-in');
@@ -62,7 +44,6 @@ var backgroundColor = function(){
    }
    else if (celsius >= 18 || farenheit >= 65){
       $( 'body' ).css('background','#FF8C2A');
-      // $( 'body' ).css('color','#FFF');
       $( '.sun' ).css('display','block');
       $( '.sun' ).css('opacity','.7');
       $( '.beach-chair' ).addClass('move-in');
@@ -76,7 +57,6 @@ var backgroundColor = function(){
    }
    else if (celsius > 0 || farenheit > 32){
       $( 'body' ).css('background','#A3CDFF');
-      // $( 'body' ).css('color','#000');
       $( '.sun' ).css('display','block');
       $( '.sun' ).css('opacity','.3');
       $( '.cloud2').css('opacity','0');
@@ -86,8 +66,8 @@ var backgroundColor = function(){
 
 
 var resetUI = function(){
+   numberFlakes = 100;
    $( 'canvas' ).css('display','none');
-   $( '.sun' ).css('display','none');
    $( '.cactus').removeClass('move-in');
    $( '.cactus').addClass('roll-out');
    $( '.cactus').addClass('hide');
@@ -176,6 +156,5 @@ function moveFlakes() {
 function init() {
   drawFlakes();
 }
-
 setInterval(init, 30);
 
