@@ -66,7 +66,6 @@ var backgroundChange = function(){
 
 
 var resetUI = function(){
-   numberFlakes = 100;
    $( 'canvas' ).css('display','none');
    $( '.cactus').removeClass('move-in');
    $( '.cactus').addClass('roll-out');
